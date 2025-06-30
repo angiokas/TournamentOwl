@@ -1,0 +1,21 @@
+services:
+  backend:
+    image: owl-backend:0.0.1
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - target: 8000
+        published: 8000
+    environment:
+      DB_BASE_DIR: /db
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - type: volume
+        source: sqlite
+        target: /db
+
+volumes:
+  sqlite:

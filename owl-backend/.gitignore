@@ -1,0 +1,71 @@
+# Python-related files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pdb
+*.log
+*.db
+*.sqlite3
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+*.db
+db.sqlite3
+media/
+static/
+
+# VS Code settings
+.vscode/
+
+# IDE settings (for example PyCharm)
+.idea/
+
+# Environment variable files
+.env
+.env.*
+
+# Python virtual environment folders
+venv/
+env/
+.venv/
+env.bak/
+venv.bak/
+
+# macOS Finder folder settings
+.DS_Store
+
+# Django migrations
+*/migrations/*.pyc
+*/migrations/*/__pycache__
+
+# If using Docker
+docker-compose.override.yml
+
+# Coverage reports (if using pytest)
+.coverage
+nosetests.xml
+coverage.xml
+*.cover
+
+# Pytest specific
+.cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Sphinx documentation
+docs/_build/
+build/
+dist/
+
+# Node modules if using node in your project
+node_modules/
+
+# PyCharm project f

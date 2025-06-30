@@ -1,0 +1,32 @@
+# justfile
+
+generate-dummies:
+    uv run scripts/generate_dummies.py
+
+migrate:
+    uv run manage.py migrate
+
+
+makemigrations:
+    uv run manage.py makemigrations
+
+devrun:
+    uv sync --only-group dev
+    uv run manage.py runserver
+
+prodrun: 
+    uv sync --only-group prod
+    uv run gunicorn tournament_owl.wsgi:application
+
+lint:
+    black . && isort .
+
+test:
+    pytest
+
+reset-db:
+    rm -rf db.sqlite3
+    find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+    find . -path "*/migrations/*.pyc"  -delete
+    uv run manage.py makemigrations
+    uv run manage.py migrate
